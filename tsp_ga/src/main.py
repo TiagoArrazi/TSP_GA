@@ -10,8 +10,8 @@ with open('mapa250.txt') as f:
 
     cidades = list()
 
-    for x, y in zip(tsp_map_x, tsp_map_y):
-        cidades.append(Cidade(x=x, y=y))
+    for (x, y), i in zip(zip(tsp_map_x, tsp_map_y), range(len(coordenadas_raw))):
+        cidades.append(Cidade(x=x, y=y, label=i))
 
     print(GeneticAlgorithm.algoritmo_genetico(pop=cidades,
                                               n_pop=100,

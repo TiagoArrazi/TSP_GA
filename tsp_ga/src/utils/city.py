@@ -2,9 +2,10 @@ import numpy as np
 
 
 class Cidade:
-    def __init__(self, x, y):
+    def __init__(self, x, y, label):
         self.x = x
         self.y = y
+        self.label = label
 
     def distancia(self, city):
         dist_x = abs(self.x - city.x)
@@ -13,4 +14,4 @@ class Cidade:
         return distancia
 
     def __repr__(self):
-        return '({}, {})'.format(self.x, self.y)
+        return '<{} - ({}, {})>'.format(self.label, self.x, self.y)

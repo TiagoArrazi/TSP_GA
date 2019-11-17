@@ -16,11 +16,14 @@ class GeneticAlgorithm:
     def plot_caminho_10(cls, caminho):
         x_coord = list()
         y_coord = list()
-        for c in caminho[:10]:
+        labels = list()
+        for i, c in enumerate(caminho[:10]):
             x_coord.append(c.x)
             y_coord.append(c.y)
+            labels.append('{}'.format(c.label))
 
-        plt.plot(x_coord, y_coord, '-ro', lw=0.5)
+        plt.plot(x_coord, y_coord, '-ro', lw=0.5, label=labels)
+        [plt.text(x, y, label) for x, y, label in zip(x_coord, y_coord, labels)]
         plt.show()
 
     @classmethod
@@ -51,6 +54,5 @@ class GeneticAlgorithm:
 
         cls.plot_progresso(progresso)
         cls.plot_caminho_10(melhor_rota)
-        cls.plot_caminho_all(melhor_rota)
 
         return melhor_rota
