@@ -9,7 +9,6 @@ class Fitness:
             dist_caminho = 0
             for i in range(0, len(self.rota)):
                 origem = self.rota[i]
-                destino = None
                 if i + 1 < len(self.rota):
                     destino = self.rota[i + 1]
                 else:
